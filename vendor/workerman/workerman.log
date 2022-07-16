@@ -1,0 +1,270 @@
+2022-07-15 15:31:38 pid:1 Exception: You can't send(array) to client, you need to convert it to a string.  in D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Protocols\Websocket.php:230
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(22): Workerman\Connection\TcpConnection->send()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#7 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#8 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#9 {main}
+2022-07-15 15:32:00 pid:1 Exception: You can't send(object) to client, you need to convert it to a string.  in D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Protocols\Websocket.php:230
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(22): Workerman\Connection\TcpConnection->send()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#7 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#8 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#9 {main}
+2022-07-15 15:40:13 pid:1 Exception: You can't send(object) to client, you need to convert it to a string.  in D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Protocols\Websocket.php:230
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(22): Workerman\Connection\TcpConnection->send()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#7 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#8 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#9 {main}
+2022-07-15 16:07:45 pid:1 Error: Undefined constant "wsWorker" in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:19
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:25:01 pid:1 Error: Cannot use object of type Workerman\Connection\TcpConnection as array in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:19
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:25:33 pid:1 Exception: You can't send(object) to client, you need to convert it to a string.  in D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Protocols\Websocket.php:230
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(22): Workerman\Connection\TcpConnection->send()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#7 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#8 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#9 {main}
+2022-07-15 16:27:40 pid:1 Error: Cannot access protected property Workerman\Connection\TcpConnection::$_remoteAddress in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:19
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:28:04 pid:1 Error: Undefined constant "_remoteAddress" in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:19
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:30:40 pid:1 Error: Undefined constant "_socket" in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:19
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:30:58 pid:1 Error: Undefined constant "remoteAddress" in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:19
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(26): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:49:48 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:20
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(35): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:50:31 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:20
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(36): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:50:50 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:20
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(36): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:52:07 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:21
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(37): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:52:46 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:21
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(37): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:53:15 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:20
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(37): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:53:37 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:21
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(37): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:54:07 pid:1 Error: Undefined constant "type_message" in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:20
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(37): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:55:18 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:20
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(37): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:55:33 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:21
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(37): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:56:27 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:22
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(38): Workerman\Worker::runAll()
+#7 {main}
+2022-07-15 16:57:08 pid:1 TypeError: Cannot access offset of type string on string in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:22
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(38): Workerman\Worker::runAll()
+#7 {main}
+2022-07-16 17:08:58 pid:1 Error: Call to a member function send() on null in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:32
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(51): Workerman\Worker::runAll()
+#7 {main}
+2022-07-16 17:09:35 pid:1 Error: Call to a member function send() on null in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:32
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(52): Workerman\Worker::runAll()
+#7 {main}
+2022-07-16 17:12:16 pid:1 Exception: You can't send(array) to client, you need to convert it to a string.  in D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Protocols\Websocket.php:230
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(32): Workerman\Connection\TcpConnection->send()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#7 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#8 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(52): Workerman\Worker::runAll()
+#9 {main}
+2022-07-16 20:27:17 pid:1 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php on line 2502 and exactly 2 expected in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:10
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2502): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Worker->acceptConnection()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(45): Workerman\Worker::runAll()
+#7 {main}
