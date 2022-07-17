@@ -33,8 +33,26 @@
         </header>
         <?php if(!($_SESSION['login'])){
             require "include/register_form.php";
+
          }else{
-            echo "You login))"; // Сюда вывести список подключённых пользователей
+            require "include/forum.php";
+
+
+
+            //echo "You login))"; // Сюда вывести список подключённых пользователей
+            ?>
+            <script>
+                let login_f = function login() {
+                    sendData ={
+                            type_message: 'login_user',
+                            data : {
+                                 userID: '<?php echo $_SESSION['login'] ?>',
+                            }
+                        };
+                    serverSendData(sendData);
+                }
+            </script>
+            <?php
          } ?>
 
 
@@ -61,8 +79,8 @@
         <button id="set_status">1Задать статус персоны</button>
         <button id="get_status">Вернуть статус</button> -->
 
-        <script src="js/script.js"></script>
-        <script src="js/<?php echo $_SESSION['login'] ? 'success_login' : 'register_form' ?>.js"></script>
+        <!-- <script src="js/script.js"></script> -->
+        <script src="js/<?php echo $_SESSION['login'] ? 'script' : 'register_form' ?>.js"></script>
 
 
 

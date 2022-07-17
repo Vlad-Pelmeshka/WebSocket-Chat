@@ -268,3 +268,56 @@ Stack trace:
 #5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
 #6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(45): Workerman\Worker::runAll()
 #7 {main}
+2022-07-17 13:17:11 pid:1 ParseError: syntax error, unexpected 'global' (T_GLOBAL) in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server_model.php:4
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(20): require()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#7 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(57): Workerman\Worker::runAll()
+#8 {main}
+2022-07-17 13:20:10 pid:1 ParseError: syntax error, unexpected '=', expecting ';' or ',' in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server_config.php:10
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(57): Workerman\Worker::runAll()
+#7 {main}
+2022-07-17 13:21:40 pid:1 ParseError: syntax error, unexpected '=', expecting ';' or ',' in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server_config.php:12
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(57): Workerman\Worker::runAll()
+#7 {main}
+2022-07-17 13:24:02 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot redeclare getUser() (previously declared in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server_model.php:3) in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server_model.php on line 3"
+2022-07-17 13:26:07 pid:1 Error: Cannot use object of type mysqli_result as array in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:32
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(57): Workerman\Worker::runAll()
+#7 {main}
+2022-07-17 13:26:19 pid:1 Error: Cannot use object of type mysqli_result as array in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php:32
+Stack trace:
+#0 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Connection\TcpConnection.php(638): {closure}()
+#1 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Events\Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#2 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(2437): Workerman\Events\Select->loop()
+#3 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1432): Workerman\Worker->run()
+#4 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(1375): Workerman\Worker::forkWorkersForWindows()
+#5 D:\Programm\OpenServer\domains\TestWebSocketChat\vendor\workerman\workerman\Worker.php(550): Workerman\Worker::forkWorkers()
+#6 D:\Programm\OpenServer\domains\TestWebSocketChat\server\server.php(57): Workerman\Worker::runAll()
+#7 {main}
+2022-07-17 13:27:13 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot redeclare getUser() (previously declared in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server_model.php:3) in D:\Programm\OpenServer\domains\TestWebSocketChat\server\server_model.php on line 3"

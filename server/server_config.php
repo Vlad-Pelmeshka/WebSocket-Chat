@@ -1,8 +1,5 @@
 <?php
 
-	$currentDir = './';
-	$NameSite = 'testwebsocketchat';
-
 	$config = array(
 	    'server' => 'localhost',
 	    'username' => 'root',
@@ -10,22 +7,26 @@
 	    'name' => 'websocket_chat'
 	);
 
+	// global $connectionMYSQL;
 
-	$connection = mysqli_connect(
+	$connectionMYSQL = mysqli_connect(
 	    $config['server'],
 	    $config['username'],
 	    $config['password'],
 	    $config['name']
 	);
 
-	if( $connection == false )
+
+	if( $connectionMYSQL == false )
 	{
 	    echo 'Не вдалося підключитися до бази даних';
 	    echo mysqli_connect_error(); //вывод ошибки почему не подключилось
 	    exit();
 	}
 
-	include "model.php";
+	$_SESSION['connectionMYSQL'] = $connectionMYSQL;
+	// var_dump($connectionMYSQL);
 
+	require_once "server_model.php";
 
- ?>
+?>
