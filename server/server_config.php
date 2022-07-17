@@ -9,23 +9,26 @@
 
 	// global $connectionMYSQL;
 
-	$connectionMYSQL = mysqli_connect(
-	    $config['server'],
-	    $config['username'],
-	    $config['password'],
-	    $config['name']
-	);
+	function connectionMYSQL($config){
+		$connectionMYSQL = mysqli_connect(
+		    $config['server'],
+		    $config['username'],
+		    $config['password'],
+		    $config['name']
+		);
 
+		if( $connectionMYSQL == false )
+		{
+		    echo 'Не вдалося підключитися до бази даних';
+		    echo mysqli_connect_error(); //вывод ошибки почему не подключилось
+		    exit();
+		}
 
-	if( $connectionMYSQL == false )
-	{
-	    echo 'Не вдалося підключитися до бази даних';
-	    echo mysqli_connect_error(); //вывод ошибки почему не подключилось
-	    exit();
+		return $connectionMYSQL;
 	}
 
-	$_SESSION['connectionMYSQL'] = $connectionMYSQL;
-	// var_dump($connectionMYSQL);
+
+
 
 	require_once "server_model.php";
 

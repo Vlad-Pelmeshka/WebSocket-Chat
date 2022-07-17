@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+    // session_start();
     use Workerman\Worker;
     require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -18,21 +18,23 @@ $wsWorker->onClose = function ($connection) {
     echo "Connection closed \n";
 };
 
-$wsWorker->onMessage = function ($connection, $data) use ($wsWorker) {
+$wsWorker->onMessage = function ($connection, $data) use ($wsWorker,$config) {
     $new_data = json_decode($data, true);
-    // var_dump($data);
+    $connectionMYSQL = connectionMYSQL($config);
     switch ($new_data['type_message']){
         case 'login_user':
 
             if($connection->personData['userID']) // User already register
                 return;
-            $userData = getUser($new_data['data']['userID']);
+            $userData = getUser($connectionMYSQL,$new_data['data']['userID']);
 
             $connection->personData['userID'] = $new_data['data']['userID'];
             $connection->personData['userLogin'] = $userData['login'];
             var_dump($connection->personData);
             break;
         case 'listActiveUser':
+
+            $clientConnection->send(getlistActiveUser());
             /*$data = $new_data['data'];
             $connection->personData['userID'] = $data['userID'];
             var_dump($connection->personData);*/

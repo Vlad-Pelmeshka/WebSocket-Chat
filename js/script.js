@@ -1,11 +1,7 @@
 const status = document.getElementById('status');
 const container = document.querySelector(".container");
-// const form = document.getElementById('form');
-// const input = document.getElementById('input');
 
-
-// const set_status = document.getElementById('set_status');
-// const get_status = document.getElementById('get_status');
+const container = document.querySelector("#active_personList > ul");
 
 const ws = new WebSocket('ws://localhost:2346');
 
