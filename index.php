@@ -1,6 +1,8 @@
 <?php
+    session_start();
     require_once "include/data.php";
-    if($_POST['personID']) $_SESSION['login'] = $_POST['personID'];
+    //var_dump($_SESSION);
+    if($_POST['personID']){ setSession($_POST['personID']); /*$_SESSION['login'] = $_POST['personID'];*/ };
 ?>
 <!DOCTYPE html>
 <html lang="uk">

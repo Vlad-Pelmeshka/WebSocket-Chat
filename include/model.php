@@ -8,6 +8,10 @@
 
 		return $result;
 	}
-	//var_dump(mysqli_fetch_assoc(getUser($connection,"76f35e6403289a021834f7af8d741dce")));
-	// var_dump($connection);
+
+	function setSession($data){
+		$_SESSION['login'] = $data;
+		//var_dump($data);
+		echo "<script>location = '/';</script>";
+	}
  ?>
