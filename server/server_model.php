@@ -8,14 +8,30 @@
 		return $result;
 	}
 
-	function getlistActiveUser(){
+	function getlistActiveUser($wsWorker,$unsetUser = false){
 
 		$listActiveUser = [];
 
-		foreach($wsWorker->connections as $clientConnection) {
-			$listActiveUser[] = $clientConnection->personData;
+		var_dump($unsetUser);
+
+		foreach($wsWorker as $clientConnection) {
+			if($unsetUser != $clientConnection->personData['userLogin']) // If user closed connection unset him from list
+			$listActiveUser[] = $clientConnection->personData['userLogin'];
 		}
 
-		return json_encode($listActiveUser);
+		return $listActiveUser;
+	}
+
+	function updateListActiveUser($wsWorker,$unsetUser = false){
+
+		// $listActive = getlistActiveUser($wsWorker->connections,$unsetUser);
+
+		$user_data = [
+            'type_message' => 'listActiveUser',
+            'data' => getlistActiveUser($wsWorker->connections,$unsetUser)
+        ];
+
+        foreach($wsWorker->connections as $clientConnection)
+            $clientConnection->send(json_encode($user_data));
 	}
 ?>

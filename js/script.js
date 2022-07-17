@@ -1,7 +1,7 @@
 const status = document.getElementById('status');
 const container = document.querySelector(".container");
 
-const container = document.querySelector("#active_personList > ul");
+const active_personList = document.querySelector("#active_personList > ul");
 
 const ws = new WebSocket('ws://localhost:2346');
 
@@ -9,8 +9,14 @@ function setStatus(value) {
     status.innerHTML = value;
 
     // if user loginned
-    if(typeof(login_f) != "undefined" && login_f !== null)
+    if(typeof(login_f) != "undefined" && login_f !== null){
         login_f();
+
+        sendData ={
+            type_message: 'listActiveUser'
+        };
+        serverSendData(sendData);
+    }
 }
 
 function serverSendData(value) {
@@ -24,13 +30,31 @@ ws.onclose = () => setStatus('DISCONECTED');
 
 ws.onmessage = response => {
     let return_data = JSON.parse(response.data);
-    // console.log(return_data);
+    console.log(return_data);
 
     switch (return_data['type_message']){
         case "message":
+            // send some of message
             let data = return_data['data'];
 
             UIkit.notification({message: data["message"], status: 'warning'})
+
+            break;
+
+        case "listActiveUser":
+            // update users list
+            let listActiveUser = return_data['data'];
+
+            active_personList.innerHTML ='';
+
+            for (let name of listActiveUser){
+
+                const li = document.createElement('li');
+
+                li.innerHTML = name;
+                active_personList.appendChild(li);
+            }
+
 
             break;
     }

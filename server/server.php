@@ -14,11 +14,13 @@ $wsWorker->onConnect = function ($connection) {
     echo "New connection \n";
 };
 
-$wsWorker->onClose = function ($connection) {
+$wsWorker->onClose = function ($connection) use ($wsWorker) {
+    updateListActiveUser($wsWorker,$connection->personData['userLogin']);
     echo "Connection closed \n";
 };
 
 $wsWorker->onMessage = function ($connection, $data) use ($wsWorker,$config) {
+
     $new_data = json_decode($data, true);
     $connectionMYSQL = connectionMYSQL($config);
     switch ($new_data['type_message']){
@@ -34,7 +36,12 @@ $wsWorker->onMessage = function ($connection, $data) use ($wsWorker,$config) {
             break;
         case 'listActiveUser':
 
-            $clientConnection->send(getlistActiveUser());
+            updateListActiveUser($wsWorker);
+
+
+
+
+            //$connection->send(json_encode($user_data));
             /*$data = $new_data['data'];
             $connection->personData['userID'] = $data['userID'];
             var_dump($connection->personData);*/
@@ -55,6 +62,8 @@ $wsWorker->onMessage = function ($connection, $data) use ($wsWorker,$config) {
         $clientConnection->send($data);
     }*/
 };
+
+
 
 Worker::runAll();
 

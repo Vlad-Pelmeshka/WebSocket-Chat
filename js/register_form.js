@@ -86,7 +86,6 @@ btnSignup.onclick = function() {
         }
     });
 
-    /**/
 }
 
 // Create a form. Send PersonID for set Session
