@@ -8,27 +8,44 @@
 		return $result;
 	}
 
-	function getlistActiveUser($wsWorker,$unsetUser = false){
+	function getlistActiveUser($wsUsers){
 
 		$listActiveUser = [];
 
-		var_dump($unsetUser);
-
-		foreach($wsWorker as $clientConnection) {
-			if($unsetUser != $clientConnection->personData['userLogin']) // If user closed connection unset him from list
-			$listActiveUser[] = $clientConnection->personData['userLogin'];
+		foreach($wsUsers as $clientConnection) {
+			$listActiveUser[] = $clientConnection['login'];
 		}
 
 		return $listActiveUser;
 	}
 
-	function updateListActiveUser($wsWorker,$unsetUser = false){
+	function  closeConnection(&$wsUsers,$connection){
+
+		// pointer to the user in the list
+		$user = &$wsUsers[$connection->personData['userID']];
+
+		// enumerate user connections and delete the specified
+		foreach ($user['connections'] as $key => $value) {
+			if($value == $connection){
+				unset($user['connections'][$key]);
+				break;
+			}
+		}
+
+		// delete user if he has no more connections
+		if(count($user['connections']) == 0)
+			unset($wsUsers[$connection->personData['userID']]);
+	}
+
+	function updateListActiveUser($wsUsers,$wsWorker){
+		// var_dump($wsUsers);
+
 
 		// $listActive = getlistActiveUser($wsWorker->connections,$unsetUser);
 
 		$user_data = [
             'type_message' => 'listActiveUser',
-            'data' => getlistActiveUser($wsWorker->connections,$unsetUser)
+            'data' => getlistActiveUser($wsUsers)
         ];
 
         foreach($wsWorker->connections as $clientConnection)

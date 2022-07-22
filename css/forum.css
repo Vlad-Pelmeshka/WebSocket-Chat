@@ -1,0 +1,55 @@
+:root {
+  --send-bg: #0B93F6;
+  --send-color: white;
+  --receive-bg: #E5E5EA;
+  --receive-text: black;
+  --page-background: white;
+}
+
+#chat {
+  max-width: 550px;
+  padding: 30px 20px;
+  border-radius: 15px;
+
+  background-color: #fff5;
+}
+
+#chat p {
+  max-width: 400px;
+  width: fit-content;
+  word-wrap: break-word;
+  margin-bottom: 12px;
+  line-height: 24px;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+#chat .send {
+  margin: 20px 10px 12px auto;
+  color: var(--send-color);
+  background: var(--send-bg);
+  align-self: flex-end;
+}
+#chat .receive {
+  background: var(--receive-bg);
+  color: black;
+  align-self: flex-start;
+}
+
+#chat .receive .data_message{
+  position: absolute;
+  font-size: 10px;
+  left: 15px;
+  top: -20px;
+
+  color: black;
+  white-space: nowrap;
+
+}
+
+
+#message_block{
+  max-height: 400px;
+  margin-top: 10px;
+  overflow-x: hidden;
+}

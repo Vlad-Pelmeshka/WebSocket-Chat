@@ -47,3 +47,50 @@ label {
     padding: 1em .5em;
     font-size: 1.5em;
 }
+
+/*  PersoList   */
+
+#active_personList{
+    max-height: 150px;
+    overflow-x: hidden;
+
+    border: 1px solid;
+}
+
+/*  Scroll  */
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 12px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: transparent;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: var(--send-bg);
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 10px #f3faf7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+    background-color: transparent;
+}

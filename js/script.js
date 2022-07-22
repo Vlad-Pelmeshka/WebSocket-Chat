@@ -1,9 +1,10 @@
 const status = document.getElementById('status');
 const container = document.querySelector(".container");
 
-const active_personList = document.querySelector("#active_personList > ul");
+const active_personList = document.querySelector("#active_personList");
 
-const ws = new WebSocket('ws://localhost:2346');
+const ws = new WebSocket('ws://192.168.50.222:2346');
+// const ws = new WebSocket('ws://localhost:2346');
 
 function setStatus(value) {
     status.innerHTML = value;
@@ -23,6 +24,14 @@ function serverSendData(value) {
     ws.send(JSON.stringify(value));
 }
 
+/*document.querySelector("#getWS").onclick = function() {
+    sendData ={
+        type_message: 'getWS'
+    };
+    serverSendData(sendData);
+}*/
+
+
 
 ws.onopen = () => setStatus('ONLINE');
 
@@ -30,7 +39,7 @@ ws.onclose = () => setStatus('DISCONECTED');
 
 ws.onmessage = response => {
     let return_data = JSON.parse(response.data);
-    console.log(return_data);
+    // console.log(return_data);
 
     switch (return_data['type_message']){
         case "message":
@@ -45,15 +54,21 @@ ws.onmessage = response => {
             // update users list
             let listActiveUser = return_data['data'];
 
-            active_personList.innerHTML ='';
+            active_personList_ul = active_personList.querySelector("ul");
+            active_personList_ul.innerHTML ='';
 
             for (let name of listActiveUser){
 
-                const li = document.createElement('li');
+                // for(let i = 0; i<5;i++){
 
-                li.innerHTML = name;
-                active_personList.appendChild(li);
+                    const li = document.createElement('li');
+
+                    li.innerHTML = name;
+                    active_personList_ul.appendChild(li);
+                // }
             }
+
+            active_personList.querySelector('span[id="kol"]').innerHTML =listActiveUser.length;
 
 
             break;
@@ -101,6 +116,5 @@ get_status.addEventListener('click', event => {
 
     ws.send(JSON.stringify(sendData));
 })*/
-
 
 

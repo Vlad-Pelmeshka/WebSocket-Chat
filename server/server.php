@@ -10,16 +10,20 @@
 
     include "server_config.php";
 
+    $wsUsers = [];
+
 $wsWorker->onConnect = function ($connection) {
     echo "New connection \n";
 };
 
-$wsWorker->onClose = function ($connection) use ($wsWorker) {
-    updateListActiveUser($wsWorker,$connection->personData['userLogin']);
+$wsWorker->onClose = function ($connection) use ($wsWorker,&$wsUsers) {
+    closeConnection($wsUsers,$connection);
+
+    updateListActiveUser($wsUsers,$wsWorker);
     echo "Connection closed \n";
 };
 
-$wsWorker->onMessage = function ($connection, $data) use ($wsWorker,$config) {
+$wsWorker->onMessage = function ($connection, $data) use ($wsWorker,&$wsUsers,$config) {
 
     $new_data = json_decode($data, true);
     $connectionMYSQL = connectionMYSQL($config);
@@ -28,15 +32,29 @@ $wsWorker->onMessage = function ($connection, $data) use ($wsWorker,$config) {
 
             if($connection->personData['userID']) // User already register
                 return;
+
             $userData = getUser($connectionMYSQL,$new_data['data']['userID']);
 
+            $wsUsers[$userData['id']]['login'] = $userData['login'];
+            $wsUsers[$userData['id']]['connections'][] = &$connection;
+
             $connection->personData['userID'] = $new_data['data']['userID'];
-            $connection->personData['userLogin'] = $userData['login'];
-            var_dump($connection->personData);
+
             break;
+
         case 'listActiveUser':
 
-            updateListActiveUser($wsWorker);
+            updateListActiveUser($wsUsers,$wsWorker);
+
+            break;
+
+        case 'getWS':
+
+            var_dump($wsUsers);
+
+            break;
+
+            // updateListActiveUser($wsUsers,$wsWorker);
 
 
 
@@ -45,7 +63,6 @@ $wsWorker->onMessage = function ($connection, $data) use ($wsWorker,$config) {
             /*$data = $new_data['data'];
             $connection->personData['userID'] = $data['userID'];
             var_dump($connection->personData);*/
-            break;
 
         /*case 'register':
             $connection->person_type = 'person';

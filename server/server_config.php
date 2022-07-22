@@ -7,8 +7,6 @@
 	    'name' => 'websocket_chat'
 	);
 
-	// global $connectionMYSQL;
-
 	function connectionMYSQL($config){
 		$connectionMYSQL = mysqli_connect(
 		    $config['server'],
@@ -26,9 +24,6 @@
 
 		return $connectionMYSQL;
 	}
-
-
-
 
 	require_once "server_model.php";
 
