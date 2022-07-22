@@ -36,7 +36,7 @@
   align-self: flex-start;
 }
 
-#chat .receive .data_message{
+#chat .receive .data_message, .send .data_message{
   position: absolute;
   font-size: 10px;
   left: 15px;
@@ -47,9 +47,14 @@
 
 }
 
+#chat .send .data_message{
+  right: 15px;
+  left: auto;
+}
+
 
 #message_block{
-  max-height: 400px;
-  margin-top: 10px;
+  max-height: 500px;
+  padding-top: 20px;
   overflow-x: hidden;
 }

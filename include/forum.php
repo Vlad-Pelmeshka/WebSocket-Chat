@@ -12,13 +12,21 @@
 				<button class="uk-button uk-button-primary">Send</button>
 			</div>
 			<div id="message_block">
-				<p class="send">Hey there! What's up</p>
-				<p class="receive"><span class="data_message"><span class="sender">Vladislav Cheredaiko</span> <span class="time">22.08.2022 14:56</span></span>Checking out iOS7 you know..</p>
-				<p class="send">Check out this bubble!</p>
-				<p class="receive"><span class="data_message"><span class="sender">Pelmeshka</span> <span class="time">22.08.2022 14:56</span></span>It's pretty cool…</p>
-				<p class="receive"><span class="data_message"><span class="sender">Vladislav Cheredaiko</span> <span class="time">22.08.2022 14:56</span></span>Not gonna lie!</p>
-				<p class="send">Yeah it's pure CSS &amp; HTML</p>
-				<p class="receive"><span class="data_message"><span class="sender">Vladislav Cheredaiko</span> <span class="time">22.08.2022 14:56</span></span>Wow that's impressive. But what's even more impressive is that this bubble is really high.</p>
+				<?php
+				// var_dump($_SESSION);
+				$messageList = MessageList($connection);
+
+				foreach ($messageList as $value) {
+					// var_dump($value['user_id']);
+					if($_SESSION['login'] == $value['user_id']){
+						echo '<p class="send"><span class="data_message"><span class="time">' . $value['time'] . '</span></span>' . $value['content'] . '</p>';
+					}else{
+						echo '<p class="receive"><span class="data_message"><span class="sender">' . $value['login'] . '</span> <span class="time">' . $value['time'] . '</span></span>' . $value['content'] . '</p>';
+					}
+				}
+
+				//var_dump($messageList); die();
+				?>
 			</div>
 		</div>
 	</div>

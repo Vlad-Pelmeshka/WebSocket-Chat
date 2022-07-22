@@ -2,6 +2,7 @@ const status = document.getElementById('status');
 const container = document.querySelector(".container");
 
 const active_personList = document.querySelector("#active_personList");
+const message_box = document.querySelector("#message_block");
 
 const ws = new WebSocket('ws://192.168.50.222:2346');
 // const ws = new WebSocket('ws://localhost:2346');
@@ -24,12 +25,17 @@ function serverSendData(value) {
     ws.send(JSON.stringify(value));
 }
 
-/*document.querySelector("#getWS").onclick = function() {
-    sendData ={
-        type_message: 'getWS'
-    };
-    serverSendData(sendData);
-}*/
+document.querySelector("#send_input > button").onclick = function() {
+    let message_data = document.querySelector("#send_input > input").value;
+    document.querySelector("#send_input > input").value = '';
+    if(message_data){
+        sendData ={
+            type_message: 'newMessage',
+            data : message_data
+        };
+        serverSendData(sendData);
+    }
+}
 
 
 
@@ -39,14 +45,56 @@ ws.onclose = () => setStatus('DISCONECTED');
 
 ws.onmessage = response => {
     let return_data = JSON.parse(response.data);
+    let data = '';
     // console.log(return_data);
 
     switch (return_data['type_message']){
         case "message":
             // send some of message
-            let data = return_data['data'];
+            data = return_data['data'];
 
             UIkit.notification({message: data["message"], status: 'warning'})
+
+            break;
+
+        case "newMessage":
+            // send some of message
+            data = return_data['data'];
+
+            const p_newMessage = document.createElement('p');
+
+            p_newMessage.innerHTML = data['data'];
+
+            const span_newMessage = document.createElement('span');
+            span_newMessage.className = "data_message";
+
+            const spanTime_newMessage = document.createElement('span');
+            spanTime_newMessage.className = "time";
+            spanTime_newMessage.innerHTML = data['date'];
+
+            span_newMessage.prepend(spanTime_newMessage);
+
+            if(return_data['sender']){
+
+                p_newMessage.className = "send";
+            }else{
+
+                p_newMessage.className = "receive";
+
+                const spanUser_newMessage = document.createElement('span');
+                spanUser_newMessage.className = "sender";
+                spanUser_newMessage.innerHTML = data['user'] + ' ';
+                span_newMessage.prepend(spanUser_newMessage);
+            }
+
+            p_newMessage.prepend(span_newMessage);
+
+            message_box.prepend(p_newMessage);
+
+            // console.log(p_newMessage);
+            // console.log(return_data);
+
+            // UIkit.notification({message: data["message"], status: 'warning'})
 
             break;
 

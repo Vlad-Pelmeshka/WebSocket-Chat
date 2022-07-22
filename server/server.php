@@ -16,14 +16,14 @@ $wsWorker->onConnect = function ($connection) {
     echo "New connection \n";
 };
 
-$wsWorker->onClose = function ($connection) use ($wsWorker,&$wsUsers) {
-    closeConnection($wsUsers,$connection);
+$wsWorker->onClose = function ($connection) use ($wsWorker, &$wsUsers) {
+    closeConnection($wsUsers, $connection);
 
-    updateListActiveUser($wsUsers,$wsWorker);
+    updateListActiveUser($wsUsers, $wsWorker);
     echo "Connection closed \n";
 };
 
-$wsWorker->onMessage = function ($connection, $data) use ($wsWorker,&$wsUsers,$config) {
+$wsWorker->onMessage = function ($connection, $data) use ($wsWorker, &$wsUsers, $config) {
 
     $new_data = json_decode($data, true);
     $connectionMYSQL = connectionMYSQL($config);
@@ -33,7 +33,7 @@ $wsWorker->onMessage = function ($connection, $data) use ($wsWorker,&$wsUsers,$c
             if($connection->personData['userID']) // User already register
                 return;
 
-            $userData = getUser($connectionMYSQL,$new_data['data']['userID']);
+            $userData = getUser($connectionMYSQL, $new_data['data']['userID']);
 
             $wsUsers[$userData['id']]['login'] = $userData['login'];
             $wsUsers[$userData['id']]['connections'][] = &$connection;
@@ -44,13 +44,23 @@ $wsWorker->onMessage = function ($connection, $data) use ($wsWorker,&$wsUsers,$c
 
         case 'listActiveUser':
 
-            updateListActiveUser($wsUsers,$wsWorker);
+            updateListActiveUser($wsUsers, $wsWorker);
 
             break;
 
         case 'getWS':
 
             var_dump($wsUsers);
+
+            break;
+
+        case 'newMessage':
+            $new_data['date'] = date("Y-m-d H:i:s");
+            $new_data['user'] = $wsUsers[$connection->personData['userID']]['login'];
+            // var_dump($new_data);
+            addMessageBD($connectionMYSQL,$new_data,$connection->personData['userID']);
+
+            sendUserNewMessage($wsWorker, $new_data, $connection);
 
             break;
 
